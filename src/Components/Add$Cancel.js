@@ -18,7 +18,7 @@ const Add$Cancel = () => {
           </div>
         </Link>
       </div>
-      <div>
+      <div className="my-3">
         <NewExpesneform />
       </div>
     </div>

@@ -14,7 +14,7 @@ export const categories = [
     },
     {
         id: Math.random(),
-        title: "HeathCare",
+        title: "HealthCare",
         icon: <MdHealthAndSafety />
     },
     {

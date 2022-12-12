@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { AiFillCaretDown } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { categories } from "../Assets/CategoriesApi";
 import { ADD_EXPENSE } from "../Redux/Actions/Actions";
 import sucessanimation from "../Assets/animation.gif";
@@ -39,14 +39,14 @@ const NewExpesneform = () => {
   return (
     <>
       {!sucess ? (
-        <div className="flex flex-col h-[440px] bg-amber-100 px-4">
+        <div className="flex flex-col h-[440px] bg-[#D4B996FF] rounded py-4 px-4">
           <div className="TOP flex-1 w-full">
             <div className="mt-4">
               <label className="mr-12">Name</label>
               <input
                 type="text"
                 placeholder="Give a name to your expense"
-                className="w-[70%] px-4 py-2 focus:outline-none"
+                className="w-[70%] px-4 py-2 focus:outline-none rounded"
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
@@ -56,7 +56,7 @@ const NewExpesneform = () => {
               <input
                 type="number"
                 placeholder="Amount of your expense"
-                className="w-[70%] px-4 py-2 focus:outline-none"
+                className="w-[70%] px-4 py-2 focus:outline-none rounded"
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
               />
@@ -64,14 +64,14 @@ const NewExpesneform = () => {
             <div className="flex">
               <label className="mr-6">Category</label>
               <div
-                className="flex items-center justify-between w-[50%] bg-white cursor-pointer px-2 py-1"
+                className="flex items-center justify-between w-[50%] bg-white cursor-pointer px-2 py-1 rounded"
                 onClick={() => setCategory(!category)}
               >
                 {catVal} <AiFillCaretDown />
               </div>
             </div>
             {category ? (
-              <div className="relative left-24 bg-gray-500 w-[48%]">
+              <div className="relative left-24 bg-red-200 mt-2 w-[48%]">
                 {categories.map(({ id, title, icon }) => (
                   <div
                     key={id}
@@ -87,7 +87,7 @@ const NewExpesneform = () => {
           </div>
           <div className="BOTTOM flex-1 relative ">
             <button
-              className="absolute bottom-0 right-0 px-4 py-2 bg-amber-800 text-white rounded-md"
+              className="absolute bottom-0 right-0 px-4 py-2 bg-[#a07855ff] text-white rounded-md"
               onClick={SubmitForm}
             >
               ADD
@@ -104,11 +104,19 @@ const NewExpesneform = () => {
             />
           </div>
           <h1 className="my-4 text-xl px-2">Form Submitted</h1>
-          <Link to="/">
-            <button className="px-4 py-2 bg-amber-700 text-white font-bold rounded-md mx-auto">
-              Home
-            </button>
-          </Link>
+          <div>
+
+            <Link to="/">
+              <button className="px-4 py-2 bg-amber-700 text-white font-bold rounded-md mx-auto mr-3">
+                Home
+              </button>
+            </Link>
+            <>
+              <button className="px-4 py-2 bg-amber-700 text-white font-bold rounded-md mx-auto" onClick={() => setSucess(!sucess)}>
+                Add More
+              </button>
+            </>
+          </div>
         </div>
       )}
     </>

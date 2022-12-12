@@ -3,8 +3,9 @@ import { useSelector } from "react-redux";
 import ExpenseCard from "./ExpenseCard";
 import empty from "../Assets/empty1.gif";
 const ExpenseList = () => {
-  const data = useSelector((state) => state.MAIN_REDUCER);
-  const list = data.expenseList;
+  const { expenseList: list, query } = useSelector((state) => state.MAIN_REDUCER);
+  const filteredList = list.filter(item => item.name.includes(query))
+  console.log(list);
 
   return (
     <div>
