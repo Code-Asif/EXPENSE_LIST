@@ -107,12 +107,12 @@ const NewExpesneform = () => {
           <div>
 
             <Link to="/">
-              <button className="px-4 py-2 bg-amber-700 text-white font-bold rounded-md mx-auto mr-3">
+              <button className="px-4 py-2 bg-[#a07855ff] border-2  text-white font-bold rounded-md mx-auto mr-3">
                 Home
               </button>
             </Link>
             <>
-              <button className="px-4 py-2 bg-amber-700 text-white font-bold rounded-md mx-auto" onClick={() => setSucess(!sucess)}>
+              <button className="px-4 py-2 bg-[#a07855ff] border-2 text-white font-bold rounded-md mx-auto" onClick={() => setSucess(!sucess)}>
                 Add More
               </button>
             </>
